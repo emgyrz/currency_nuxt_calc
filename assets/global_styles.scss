@@ -1,0 +1,97 @@
+$grey: #e2e4e8;
+$blue: #5881ea;
+
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  font-size: 16px;
+  background: #f9f9f9;
+  font-family: 'DejaVu Sans', sans-serif;
+
+  > div {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  padding: 40px;
+  border: 1px solid $grey;
+  background: #fff;
+  max-width: 400px;
+
+  .title {
+    margin-top: 0;
+    font-weight: 500;
+    font-size: 24px;
+    border-bottom: 1px solid $grey;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+
+  }
+}
+
+button {
+  box-shadow: none;
+  border: 0;
+  border-radius: 4px;
+  background: $blue;
+  color: #fff;
+  width: 100%;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 36px;
+  margin: 10px 0 0;
+  cursor: pointer;
+  &:disabled {
+    opacity: .7;
+    cursor: not-allowed;
+  }
+}
+
+.input-with-select {
+  margin-bottom: 25px;
+
+  label {
+    display: inline-block;
+    font-size: 13px;
+    padding-bottom: 5px;
+  }
+  > div {
+    display: flex;
+    input, select {
+      box-sizing: border-box;
+      height: 36px;
+      box-shadow: none;
+      outline: none;
+
+    }
+
+    input {
+      flex: 1;
+      border: 1px solid #d6dade;
+      border-radius: 4px 0 0 4px;
+      border-right: 0;
+      padding: 0 7px;
+      &:focus, &:active {
+        border: 1px solid $blue;
+        box-shadow: none;
+      }
+    }
+
+    select {
+      background: $blue;
+      font-size: 12px;
+      border: 1px solid $blue;
+      color: #fff;
+      border-radius: 0 4px 4px 0;
+      padding: 0 7px;
+    }
+  }
+}
+
