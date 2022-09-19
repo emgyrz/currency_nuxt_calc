@@ -4,12 +4,12 @@ section
     h2.title Exchange {{ baseCurrency.code }} to {{ quoteCurrency.code }}
 
     CurrencyInput(
-      label="You Pay" :currency="baseCurrency" :currenciesList="baseCurrenciesCodes"
+      label="You Pay" :currency="baseCurrency" :codesList="baseCurrenciesCodes"
       @update:amount="handleBaseCurrencyAmountChange" @update:code="handleBaseCurrencyCodeChange"
     )
 
     CurrencyInput(
-      label="You Got" :currency="quoteCurrency" :currenciesList="quoteCurrenciesCodes"
+      label="You Got" :currency="quoteCurrency" :codesList="quoteCurrenciesCodes"
       @update:amount="handleQuoteCurrencyAmountChange" @update:code="handleQuoteCurrencyCodeChange"
     )
 

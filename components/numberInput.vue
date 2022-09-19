@@ -3,6 +3,8 @@ input(v-model="valueStr" @change="handleChange")
 </template>
 
 <script lang="ts">
+import { Ref } from "vue";
+
 export default {
   props: ['isFloat', 'value'],
   emits: ['change'],
@@ -11,6 +13,7 @@ export default {
     const valueStr = ref('')
 
     function handleChange() {
+      clearValue(valueStr)
       if (props.value === null) {
         valueStr.value = ''
       }
@@ -27,6 +30,12 @@ export default {
 
     return { valueStr, handleChange }
   },
+}
+
+function clearValue(strRef: Ref<string>) {
+  const val = strRef.value
+  const clearedVal = val.replace(/[^\d.]+/g, "")
+  if (clearedVal !== val) { strRef.value = clearedVal }
 }
 
 function parseValue(str: string, isFloat?: boolean): null | number {
